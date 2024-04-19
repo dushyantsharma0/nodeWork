@@ -6,7 +6,7 @@ const cors=require('cors')
 
 
 const app = express()
-app.use(cors())
+
 app.use(express.urlencoded({extended:false}))
 
 app.use(express.json())
@@ -14,7 +14,7 @@ app.use(express.json())
 const routes =require('./routers/userRouter')
 
 app.use('/',routes)
-
+app.use(cors())
 
 app.listen(3000,()=>{
     console.log('Server is running on port 3000')
