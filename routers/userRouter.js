@@ -6,7 +6,9 @@ const commentSchma=require('../models/comments');
 const likesSchma=require('../models/likes');
 const { populate } = require('dotenv');
 const router=express();
+const cors=require('cors');
 
+router.use(cors());
 router.get('/', function(req, res){
  res.send('Hello World');
 })
